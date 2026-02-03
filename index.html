@@ -7,7 +7,6 @@
         body { margin: 0; background-color: #000; display: flex; justify-content: center; align-items: center; height: 100vh; color: white; font-family: sans-serif; }
         #game-container { position: relative; width: 988px; height: 556px; background: #222; }
         canvas { position: absolute; top: 0; left: 0; }
-        #controls { position: absolute; bottom: 10px; width: 100%; text-align: center; z-index: 100; }
     </style>
 
     <script src="js/jquery-1.8.3.min.js"></script>
@@ -17,6 +16,22 @@
     <script src="js/tweenjs-0.5.1.min.js"></script>
     <script src="js/movieclip-0.6.1.min.js"></script>
     <script src="js/terrariumlib.js"></script>
+
+    <script type="text/javascript">
+        var world='desert';
+        var gameType = 'desert';
+        
+        // Emergency Image Redirect
+        var imgBase = "https://web.archive.org/web/20251021170710im_/https://pbskids.org/plumlanding/games/ecosystem/i/";
+        
+        // This tells the engine to look at the archive for the big background files
+        var queue = new createjs.LoadQueue();
+        queue.loadManifest([
+            {id: "daybkgrnd", src: imgBase + "terrarium-desert-bg-day.jpg"},
+            {id: "nightbkgrnd", src: imgBase + "terrarium-desert-bg-night.jpg"},
+            {id: "ship", src: imgBase + "theship2.jpg"}
+        ]);
+    </script>
 </head>
 <body>
 
@@ -26,22 +41,19 @@
         <canvas id="bg_canv" width="988" height="556"></canvas>
         <canvas id="ui_canv" width="988" height="556"></canvas>
         
-        <img id="splashimg" src="i/terrarium-desert-splash.jpg" width="988" height="556" style="position: absolute; z-index: 50;">
+        <img id="splashimg" src="https://web.archive.org/web/20251021170710im_/https://pbskids.org/plumlanding/games/ecosystem/i/terrarium-desert-splash.jpg" width="988" height="556" style="position: absolute; z-index: 50;">
         
         <a id="playbtn" style="position: absolute; left: 405px; bottom: 50px; z-index: 60; cursor: pointer;">
-            <img src="i/playbutton.png">
+            <img src="https://web.archive.org/web/20251021170710im_/https://pbskids.org/plumlanding/games/ecosystem/i/playbutton.png">
         </a>
     </div>
 
     <script>
-        // Force the game to hide the splash screen when Play is clicked
         $('#playbtn').on('click', function() {
             $('#splashimg').hide();
             $(this).hide();
-            
-            // Try to trigger the internal game start function if it exists
+            // Start the game engine
             if (typeof init === "function") { init(); }
-            if (typeof startgame === "function") { startgame(); }
         });
     </script>
 </body>
