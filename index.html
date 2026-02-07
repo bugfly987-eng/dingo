@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+<script>
+    // This will pop up an alert the second a file fails to load
+    window.addEventListener('error', function(e) {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'SCRIPT') {
+            alert("MISSING FILE: " + e.target.src);
+        }
+    }, true);
+
+    // This catches "Internal" game errors
+    window.onerror = function(msg, url, line) {
+        alert("GAME CRASHED: " + msg + "\nFile: " + url);
+        return false;
+    };
+</script>
 <head>
     <meta charset="UTF-8">
     <title>Feed the Dingo - Local</title>
