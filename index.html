@@ -4,44 +4,34 @@
     <meta charset="UTF-8">
     <title>Plum Landing: Feed the Dingo</title>
     
-    <link rel="stylesheet" href="/dingo/css/reset.css">
-    <link rel="stylesheet" href="/dingo/css/style.css">
-    <link rel="stylesheet" href="/dingo/css/added.css">
-    <link rel="stylesheet" href="/dingo/css/ecosystem_v2.css">
+    <base href="/dingo/">
 
-    <style>
-        body { margin: 0; background: #000; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
-        #game-container { position: relative; width: 988px; height: 556px; background-color: #222; }
-        canvas { position: absolute; top: 0; left: 0; }
-        #bg_canv { z-index: 10; }
-        #terrarium_canv { z-index: 30; }
-        #ui_canv { z-index: 40; }
-        #splashimg { z-index: 50; position: absolute; }
-        #playbtn { z-index: 60; position: absolute; cursor: pointer; }
-    </style>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/added.css">
+    <link rel="stylesheet" href="css/ecosystem_v2.css">
 
     <script>
-        // Paths updated to include /dingo/
-        var resourcePath = "/dingo/"; 
-        var imagePath = "/dingo/i/";
-        var audioPath = "/dingo/audio/";
-        var assetPath = "/dingo/assets/";
+        // Now we can use simple paths again because of the <base> tag
+        var resourcePath = "./"; 
+        var imagePath = "i/";
+        var audioPath = "audio/";
+        var assetPath = "assets/";
         
         var world = 'desert';
         var gameType = 'desert';
     </script>
 
-    <script src="/dingo/js/jquery-1.8.3.min.js"></script>
-    <script src="/dingo/js/easeljs-0.7.0.min.js"></script>
-    <script src="/dingo/js/preloadjs-0.4.1.min.js"></script>
-    <script src="/dingo/js/soundjs-0.5.1.min.js"></script>
-    <script src="/dingo/js/tweenjs-0.5.1.min.js"></script>
-    <script src="/dingo/js/movieclip-0.6.1.min.js"></script>
-    
-    <script src="/dingo/js/Vect.js"></script>
-    <script src="/dingo/js/Critter.js"></script>
-    <script src="/dingo/js/MovingCritter.js"></script>
-    <script src="/dingo/js/terrariumlib.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/easeljs-0.7.0.min.js"></script>
+    <script src="js/preloadjs-0.4.1.min.js"></script>
+    <script src="js/soundjs-0.5.1.min.js"></script>
+    <script src="js/tweenjs-0.5.1.min.js"></script>
+    <script src="js/movieclip-0.6.1.min.js"></script>
+    <script src="js/Vect.js"></script>
+    <script src="js/Critter.js"></script>
+    <script src="js/MovingCritter.js"></script>
+    <script src="js/terrariumlib.js"></script>
 </head>
 <body>
 
